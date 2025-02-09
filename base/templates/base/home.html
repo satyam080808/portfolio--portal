@@ -1,0 +1,83 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <section class="hero">
+        <div class="hero--content">
+            <div class="hero--content--intro">
+                <img id="profile_pic" src="{% static 'images/photo1.jpeg' %}">
+                <h1 class="intro--name" >Satyam <br> Kumar</h1>
+            </div>
+            <div class="hero--content--subheadline">
+                <h3 class="description">FullStack Developer</h3>
+                <p class="slogan">Turning curiosity into code, ideas into AI, and learning into real-world solutions with Django, Python, and the web.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section--2">
+
+        <h3>My Projects</h3>
+        <h5>Projects that makes my journey worthwhile</h5>
+        <div class="projects-wrapper">
+
+           {% for project in projects %} 
+            <div class="project--column">
+                <a href="{% url 'project' project.id %}">
+                <img class="project--thumbnail" src="{{project.thumbnail.url}}" >
+                </a>
+                <div class="project--body">
+                    <h5>{{project.title}}</h45>
+                </div>
+            </div>
+            {% empty %}
+                 <h3>There are no products in Database...<h3>
+            {% endfor %}
+        </div>
+
+        <div class="about--wrapper">
+            <h3>More About Me</h3>
+            <p>I am a Computer Science and Artificial Intelligence student with a strong passion for programming and data-driven solutions.
+                 My skills include Python, C, Django, HTML, CSS, NumPy, Pandas, and Matplotlib, allowing me to build intelligent systems 
+                 and interactive web applications while continuously expanding my expertise.</p>
+
+            <p>Beyond coding, I am a dedicated athlete with achievements in Kabaddi, short put, and relay events. My experience in 
+                competitive sports has strengthened my teamwork, discipline, and problem-solving skills, which I apply to both 
+                technology and innovation.</p>
+        </div>
+
+    </section>
+
+    <section class="section--1">
+
+    <div class="skill--container">
+        <h3>Skills</h3>
+
+        {% for skill in detailedSkills %}
+        <div class="skills--wrapper">
+                <h5>{{skill.title}}</h5>
+                <p>{{skill.body}}</p>
+        </div>
+        {% endfor %}
+
+
+
+        <h4>Other Skills</h4>
+        <div class="other--skills--wrapper">
+            {% for skill in skills %}
+            <div class="skill--tag">
+                <span>{{skill.title}}</span>
+            </div>
+            {% endfor %}
+    
+        </div>
+
+
+    </div>
+
+</section>
+
+
+  {% endblock content %}
