@@ -11,8 +11,17 @@
     <link rel="stylesheet" type='text/css' media='screen' href="{% static 'styles/main.css' %}">
 </head>
 <body>
+{% include 'base/navbar.html' %}
+ {% if messages %}
 
-    {% include 'base/navbar.html' %}
+     {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+    {% endfor %}
+ {% endif %}
+
+   
     {% block content %}
     {% endblock content %}
 </body>
