@@ -18,6 +18,8 @@ urlpatterns = [
 
     path('donation/', views.donationPage, name="donation"),
 
+    path('chart/', views.chartPage, name="chart"),
+
 ]
 
 
