@@ -114,4 +114,6 @@ def addEndoresement(request):
     return render(request, 'base/endorsement_form.html', context)
 
 
+def donationPage(request):
+    return render(request, 'base/donation.html')
 

@@ -68,4 +68,3 @@ class Endorsement(models.Model):
     
 
     
-    

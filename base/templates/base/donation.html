@@ -1,0 +1,61 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .donation-wrapper {
+        margin: 0 auto;
+    }
+</style>
+
+<div class="container">
+
+    <div style="width: 300px;" class="card my-3 donation-wrapper">
+        <div class="card-body ">
+            <h3>Buy me a coffee :)</h3>
+
+            <p>Would you consider donating $5?</p>
+            <div id="paypal-button-container"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=ASdVFr5lrTK7hC6ofM2CiYtwt4w70DOm2IYIx3lKksoxjBwsy1RQrBYt5uxhTf7Gbbg7HUzZQ8KDgBEH&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+    
+        paypal.Buttons({
+    
+            style: {
+                color: 'blue',
+                shape: 'rect',
+                label: 'pay',
+                height: 40
+            },
+
+        // Set up the transaction
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '5.00'
+                    }
+                }]
+            });
+        },
+
+        // Finalize the transaction
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                // Show a success message to the buyer
+                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+            });
+        }
+        }).render('#paypal-button-container');
+    </script>
+
+{% endblock content %}
+
+

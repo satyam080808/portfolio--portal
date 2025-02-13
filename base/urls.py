@@ -14,8 +14,9 @@ urlpatterns = [
 
     path('add-skill/', views.addSkill, name="add-skill"),
     
-    path('add-endorsement/', views.addEndoresement, name="add-endorsement")
+    path('add-endorsement/', views.addEndoresement, name="add-endorsement"),
 
+    path('donation/', views.donationPage, name="donation"),
 
 ]
 
