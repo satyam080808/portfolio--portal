@@ -123,6 +123,13 @@ body{
 .skills--wrapper{
     margin-top: 2em;
     margin-bottom: 2em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.skill--logo{
+    width: 60px;
 }
 
 .other--skills--wrapper{
@@ -165,6 +172,20 @@ body{
     .hero--content{
         width: 100%;
     }
+}
+
+@media (max-width:600px){
+    .skills--container{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width:400px){
+    .skills--wrapper{
+        flex-flow: column;
+    }
+    
 }
 
 
