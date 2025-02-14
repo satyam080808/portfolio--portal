@@ -17,28 +17,6 @@ A **dynamic portfolio portal** to showcase projects, skills, and endorsements wi
 - 💰 **Monetization Support:** Integrated a **"Buy Me a Coffee" button** for user support.
 
 
-## ⚙️ Installation & Setup
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/satyam080808/portfolio--portal.git
-   cd portfolio--portal
-   ```
-2. **Set up a virtual environment:**
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
-3. **Install dependencies:**
-   ```sh
-   pip install -r requirements.txt
-   ```
-4. **Apply migrations and start the server:**
-   ```sh
-   python manage.py migrate
-   python manage.py runserver
-   ```
-5. **Access the portal at** `http://127.0.0.1:8000/`.
-
 ## 📸 
 **Home Page
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/456abc62-acae-4214-acf5-874544664715" />
